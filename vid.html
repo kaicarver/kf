@@ -4,37 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>My Video Page with links</h1>
+    <div class="container">
+        <h1>My Video Page with links, responsive</h1>
 
-    <video id="myVideo" width="640" height="360" controls>
-        <source src="img/leslie_feu.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+        <video id="myVideo" controls>
+            <source src="img/leslie_feu.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
-    <p>Click on the links below to jump to specific times in the video:</p>
-    <ul>
-        <li><a href="#" onclick="jumpToTime(0)">Tiens droit debout mains down</a></li>
-        <li><a href="#" onclick="jumpToTime(0.9)">Avance jambe droite tchin sao droite</a></li>
-        <li><a href="#" onclick="jumpToTime(3)">Tourne gauche 135° tchin sao gauche</a></li>
-        <li><a href="#" onclick="jumpToTime(4.5)">Tourne droite 135° uppercut droite</a></li>
-        <li><a href="#" onclick="jumpToTime(6.5)">Avance jambe gauche coup de poing latéral gauche</a></li>
-        <li><a href="#" onclick="jumpToTime(8)">Tourne droite 45° pied droite boule coup main en l’air droite
-        </a></li>
-        <li><a href="#" onclick="jumpToTime(4.5)"></a></li>
-        <li><a href="#" onclick="jumpToTime(4.5)"></a></li>
-        <li><a href="#" onclick="jumpToTime(4.5)"></a></li>
-        <li><a href="#" onclick="jumpToTime(4.5)"></a></li>
-        <li><a href="#" onclick="jumpToTime(4.5)"></a></li>
-        <li><a href="#" onclick="jumpToTime(4.5)"></a></li>
-        <li><a href="#" onclick="jumpToTime(4.5)"></a></li>
+        <p>Click on the links below to jump to specific times in the video:</p>
 
-        <li><a href="#" onclick="jumpToTime(30)">30 seconds</a></li>
-        <li><a href="#" onclick="jumpToTime(60)">1 minute</a></li>
-        <li><a href="#" onclick="jumpToTime(120)">2 minutes</a></li>
-        <!-- Add more links as needed -->
-    </ul>
+        <ul>
+            <li><a href="#" onclick="jumpToTime(0)">Tiens droit debout mains down</a></li>
+            <li><a href="#" onclick="jumpToTime(0.9)">Avance jambe droite tchin sao droite</a></li>
+            <li><a href="#" onclick="jumpToTime(3)">Tourne gauche 135° tchin sao gauche</a></li>
+            <li><a href="#" onclick="jumpToTime(4.5)">Tourne droite 135° uppercut droite</a></li>
+            <li><a href="#" onclick="jumpToTime(6.5)">Avance jambe gauche coup de poing latéral gauche</a></li>
+            <li><a href="#" onclick="jumpToTime(8)">Tourne droite 45° pied droite boule coup main en l’air droite
+            </a></li>
+            <li><a href="#" onclick="jumpToTime(4.5)"></a></li>
+            <li><a href="#" onclick="jumpToTime(4.5)"></a></li>
+            <li><a href="#" onclick="jumpToTime(4.5)"></a></li>
+            <li><a href="#" onclick="jumpToTime(4.5)"></a></li>
+            <li><a href="#" onclick="jumpToTime(4.5)"></a></li>
+            <li><a href="#" onclick="jumpToTime(4.5)"></a></li>
+            <li><a href="#" onclick="jumpToTime(4.5)"></a></li>
+
+            <li><a href="#" onclick="jumpToTime(30)">30 seconds</a></li>
+            <li><a href="#" onclick="jumpToTime(60)">1 minute</a></li>
+            <li><a href="#" onclick="jumpToTime(120)">2 minutes</a></li>
+            <!-- Add more links as needed -->
+        </ul>
+    </div>
 
     <script>
         function jumpToTime(time) {
