@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fire WIP</title>
+    <title>Feu Tao ga WIP</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,14 +16,14 @@
             margin: 0 auto;
             padding: 20px;
         }
-        tr {
+        tr, td {
             vertical-align: top;
+            padding: 0;
         }
         video {
             height: auto;
             width: 80%;
         }
-
         ul {
             list-style: none;
             padding: 0;
@@ -32,11 +32,14 @@
         li {
             margin-bottom: 2px;
         }
+        .arrow {
+            font-family: monospace;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>My Video Page with links, still not responsive</h1>
+        <h1>Feu Tao ga WIP</h1>
         <table>
             <tr>
                 <td>
@@ -53,6 +56,17 @@
     </div>
 
     <script>
+        const pointscardinaux = `
+↑
+↗
+→
+↘
+↓
+↙
+←
+↖
+`.trim().split('\n');
+console.log(pointscardinaux);
         const set = `
 0    Tiens droit debout mains down
 0.9  Avance jambe droite tchin sao droite
@@ -63,14 +77,14 @@
 9    Tourne gauche -45° pied gauche boule coup main en l’air gauche
 10   Avance pied gauche talon coup poing latéral droit
 12   Tourne droite 135° uppercut droite
-14   Avance jambe gauche coup de poing latéral gauche
-16   Tourne droite 45° pied droite boule coup main en l’air droite
-18   Kick pied droite main crochet droite down
-20   Avance pied droite angle accentué
-22   Kick pied gauche
-24   Tourne droite 45° pied gauche arrière coup poing droite
-26   Avance pied gauche coup poing gauche
-31   Avance pied droite uppercut droite
+18   Avance jambe gauche coup de poing latéral gauche
+20   Tourne droite 45° pied droite boule coup main en l’air droite
+25   Kick pied droite main crochet droite down
+26   Avance pied droite angle accentué
+27   Kick pied gauche
+28   Tourne droite 45° pied gauche arrière coup poing droite
+29   Avance pied gauche coup poing gauche
+32   Avance pied droite uppercut droite
 34   Avance pied gauche tchin sao gauche
 36   Tourne droite 135° tchin sao droite
 39.5 Avance pied droite uppercut gauche
@@ -97,7 +111,8 @@
                         console.log(`matching angle = ${turn}`);
                         angle += turn;
                     }
-                    html += `<li>${angle} <a href="#" onclick="jumpToTime(${timecode})">${instruction}</a></li>\n`;
+                    const arrow = pointscardinaux[(angle/45+8)%8];
+                    html += `<li><span class="arrow">${arrow}</span> <a href="#" onclick="jumpToTime(${timecode})">${instruction}</a></li>\n`;
                 }
             });
             html += "</ul>\n";
